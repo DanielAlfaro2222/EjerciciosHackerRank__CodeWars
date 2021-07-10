@@ -31,6 +31,12 @@
       <artifactId>hibernate-core</artifactId>
       <version>5.4.4.Final</version>
     </dependency>
+  
+    <dependency>
+      <groupId>org.httprpc</groupId>
+      <artifactId>httprpc-client</artifactId>
+      <version>6.6.2</version>
+    </dependency>
   </dependencies>
 
   <build>
