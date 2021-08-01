@@ -3,18 +3,20 @@ package com.danielalfaro;
 import java.util.Scanner;
 
 public class Ejercicio_9 {
-    
+
     public static void main(String[] args) {
-        
+
         // Algoritmo para resolver el problema
 
         // 1.Pedirle al usuario el numero de filas y columnas que tendra la matriz.
-        // 2.Crear y definir la matriz de tipo entero con la cantidad de filas y columnas ingresadas por el usuario
-        // 3.Crear un bucle for anidado para llenar la matriz con numeros enteros que ingrese el usuario
+        // 2.Crear y definir la matriz de tipo entero con la cantidad de filas y
+        // columnas ingresadas por el usuario
+        // 3.Crear un bucle for anidado para llenar la matriz con numeros enteros que
+        // ingrese el usuario
         // 4.Imprimir como esta compuesta la matriz
         // 5.Calcular la suma de la primer diagonal
         // 6.Calcular la suma de la diagonal contraria
-        // 7.Calcular y mostrar la diferencia 
+        // 7.Calcular y mostrar la diferencia
 
         Scanner ingreso = new Scanner(System.in);
 
