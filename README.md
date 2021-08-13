@@ -1,1 +1,1 @@
-# Solucion Ejercicios Hacker Rank en diferentes lenguajes
+# Solucion Ejercicios de Hacker Rank en diferentes lenguajes
