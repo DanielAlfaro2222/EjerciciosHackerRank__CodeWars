@@ -9,20 +9,37 @@ public class Ejercicio_24 {
     public static int migratoryBirds(List<Integer> arr) {
 
         // Crear e instanciar un conjunto en el cual almacenaramos todos los elementos
-        // que no esten repetidos
+        // que no esten repetidos, estos elementos quedaran almacenados de menor a
+        // mayor.
         HashSet<Integer> Conjunto = new HashSet<>();
 
-        // Recorrer el array que llega
+        // Recorrer el array que llega por parametro e ir añadiendo cada elemento en el
+        // Conjunto
         for (Integer integer : arr) {
             Conjunto.add(integer);
         }
 
-        int Tipo = 0;
-        int CantidadTipo = 0;
+        // Array en donde almacenaramos en orden la cantidad de veces que aparece cada
+        // elemento en el array que recibe por parametro la funcion.
+        ArrayList<Integer> CantidadVecesNumero = new ArrayList<Integer>();
 
+        // Array en donde almacenaramos los numeros presentes en el conjunto, como no
+        // podremos acceder a un solo elemento del conjunto, tendremos que almacenar lo
+        // que hay en el conjunto en un array
+        ArrayList<Integer> Numero = new ArrayList<Integer>();
+
+        // Este bucle realiza dos cosas:
+
+        // 1).Recorrer el conjunto y almacenar cada elemento del conjunto en el array
+        // Numero para despues poder sacar o retornar que numero es el que mas veces
+        // aparece.
+
+        // 2).Cuenta el numero de veces que aparece cada elemento del conjunto y luego
+        // lo almacena en el array CantidadVecesNumero.
         for (Integer integer : Conjunto) {
 
             int Conteo = 0;
+            Numero.add(integer);
 
             for (int j = 0; j < arr.size(); j++) {
                 if (integer == arr.get(j)) {
@@ -30,9 +47,31 @@ public class Ejercicio_24 {
                 }
             }
 
+            CantidadVecesNumero.add(Conteo);
         }
 
-        return Tipo;
+        // Supondremos que la cantidad de veces que es mayor es la posicion 0 del array
+        // CantidadVecesNumero
+        int MayorNumero = CantidadVecesNumero.get(0);
+
+        // Posicion del elemento que mas veces aparece, por ahora supondremos que es la
+        // posicion 0
+        int Posicion = 0;
+
+        // Este bucle for recorre el array CantidadVecesNumero y va mirando si lo que
+        // hay en la posicion j del array CantidadVecesNumero es mayor a lo que hay en
+        // la variable MayorNumero, si esto se cumple cambia el valor de la variable
+        // MayorNumero y cambia la posicion la cual la usaremos para conocer que numero
+        // es el que mas veces se repite.
+        for (int i = 0; i < CantidadVecesNumero.size(); i++) {
+            if (CantidadVecesNumero.get(i) > MayorNumero) {
+                MayorNumero = CantidadVecesNumero.get(i);
+                Posicion = i;
+            }
+        }
+
+        // Retornamos el numero que mas veces se repite
+        return Numero.get(Posicion);
     }
 
     public static void main(String[] args) {
@@ -111,30 +150,30 @@ public class Ejercicio_24 {
         // Dos tipos tienen una frecuencia de 3, y el menor de ellos es el tipo 3.
 
         // Caso de prueba 1
-        ArrayList<Integer> arr = new ArrayList<Integer>();
-        arr.add(1);
-        arr.add(4);
-        arr.add(4);
-        arr.add(4);
-        arr.add(5);
-        arr.add(3);
-
-        System.out.println(migratoryBirds(arr));
-
-        // Caso de prueba 2
         // ArrayList<Integer> arr = new ArrayList<Integer>();
         // arr.add(1);
-        // arr.add(2);
-        // arr.add(3);
+        // arr.add(4);
+        // arr.add(4);
         // arr.add(4);
         // arr.add(5);
-        // arr.add(4);
         // arr.add(3);
-        // arr.add(2);
-        // arr.add(1);
-        // arr.add(3);
-        // arr.add(4);
 
         // System.out.println(migratoryBirds(arr));
+
+        // Caso de prueba 2
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        arr.add(1);
+        arr.add(2);
+        arr.add(3);
+        arr.add(4);
+        arr.add(5);
+        arr.add(4);
+        arr.add(3);
+        arr.add(2);
+        arr.add(1);
+        arr.add(3);
+        arr.add(4);
+
+        System.out.println(migratoryBirds(arr));
     }
 }
